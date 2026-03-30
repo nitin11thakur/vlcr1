@@ -1,0 +1,52 @@
+# VLCR Backend — Python Dependencies
+# Python 3.11+
+
+# ── Web Framework ─────────────────────────────────────────────────────────────
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+
+# ── Database ──────────────────────────────────────────────────────────────────
+sqlalchemy[asyncio]==2.0.35
+asyncpg==0.29.0
+alembic==1.13.3
+
+# ── Redis ─────────────────────────────────────────────────────────────────────
+redis[asyncio]==5.0.8
+
+# ── Auth ──────────────────────────────────────────────────────────────────────
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# ── Validation & Settings ─────────────────────────────────────────────────────
+pydantic==2.9.2
+pydantic-settings==2.5.2
+
+# ── AI / LLM ──────────────────────────────────────────────────────────────────
+anthropic==0.40.0
+
+# ── HTTP Client ───────────────────────────────────────────────────────────────
+httpx==0.27.2
+
+# ── Task Queue (Celery for async dispatch) ────────────────────────────────────
+celery==5.4.0
+kombu==5.3.4
+
+# ── AWS SDK ───────────────────────────────────────────────────────────────────
+boto3==1.35.36
+botocore==1.35.36
+
+# ── SMS ───────────────────────────────────────────────────────────────────────
+twilio==9.3.2
+
+# ── Observability ─────────────────────────────────────────────────────────────
+prometheus-fastapi-instrumentator==7.0.0
+
+# ── Dev / Test ────────────────────────────────────────────────────────────────
+# FIX: Removed duplicate httpx entry.
+# FIX: Added aiosqlite, fakeredis, hypothesis — all used in tests/ but were missing.
+pytest==8.3.3
+pytest-asyncio==0.24.0
+hypothesis==6.112.0
+fakeredis==2.26.0
+aiosqlite==0.20.0
